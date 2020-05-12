@@ -2,23 +2,16 @@ name: Docker
 
 on:
   push:
-    # Publish `master` as Docker `latest` image.
     branches:
       - master
-
-    # Publish `v1.2.3` tags as releases.
     tags:
       - v*
-
 env:
   IMAGE_NAME: "kubectl"
 
 jobs:
 
-  # Push image to GitHub Packages.
-  # See also https://docs.docker.com/docker-hub/builds/
   push:
-    # Ensure test job passes before pushing image.
 
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
@@ -51,5 +44,5 @@ jobs:
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
 
-          docker tag kubectl:$VERSION $IMAGE_ID:$VERSION
+          docker tag kubectl $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION

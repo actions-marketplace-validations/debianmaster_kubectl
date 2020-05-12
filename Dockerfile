@@ -1,7 +1,7 @@
 FROM bitnami/kubectl:latest
 LABEL maintainer "Chakradhar Rao Jonagam"
 LABEL version="1.0.0"
-LABEL name="kubectl"
+LABEL name="debianmaster/kubectl"
 LABEL repository="http://github.com/debianmaster/kubectl"
 LABEL homepage="http://github.com/debianmaster/kubectl"
 LABEL com.github.actions.name="Kubernetes CLI - kubectl"
