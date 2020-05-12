@@ -19,13 +19,6 @@ jobs:
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      with:
-        args: set image --record deployment/my-app container=${{ github.repository }}:${{ github.sha }}
-    - name: verify deployment
-      uses: debianmaster/kubectl@master
-      env:
-        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        KUBECTL_VERSION: "1.15"
       run: |
         kubectl get nodes
 ```
