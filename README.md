@@ -1,4 +1,4 @@
-# Github Action for Kubernetes CLI
+# Github Action for Kubernetes CLI.  [WIP do not use]
 
 This action provides `kubectl` for Github Actions.
 
